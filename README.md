@@ -9,7 +9,7 @@ AliPay SDK for Golang
 
 [@clearluo](https://github.com/clearluo)
 
-[@zwh8800](https://github.com/zwh8800) 
+[@zwh8800](https://github.com/zwh8800)
 
 ## 帮助
 
@@ -26,37 +26,37 @@ PayPal [https://github.com/smartwalle/paypal](https://github.com/smartwalle/payp
 #### 手机网站支付API
 
 ```
-中线(-)后面的名称是该接口在 AliPay 结构体中对应的方法名。
+中线(-)后面的名称是该接口在 AliPay 结构体中对应的方法名1。
 ```
 
 * **手机网站支付接口**
-	
+
 	alipay.trade.wap.pay - **TradeWapPay()**
-	
+
 * **电脑网站支付**
 
 	alipay.trade.page.pay - **TradePagePay()**
 
 * **统一收单线下交易查询**
-	
+
 	alipay.trade.query - **TradeQuery()**
-	
+
 * **统一收单交易支付接口**
-	
+
 	alipay.trade.pay - **TradePay()**
-	
+
 * **统一收单交易创建接口**
 
 	alipay.trade.create - **TradeCreate()**
-	
+
 * **统一收单线下交易预创建**
 
 	alipay.trade.precreate - **TradePreCreate()**
-	
+
 * **统一收单交易撤销接口**
 
 	alipay.trade.cancel - **TradeCancel()**
-	
+
 * **统一收单交易关闭接口**
 
 	alipay.trade.close - **TradeClose()**
@@ -64,7 +64,7 @@ PayPal [https://github.com/smartwalle/paypal](https://github.com/smartwalle/payp
 * **统一收单交易退款接口**
 
 	alipay.trade.refund - **TradeRefund()**
-	
+
 * **App支付接口**
 
 	alipay.trade.app.pay - **TradeAppPay()**
@@ -72,19 +72,19 @@ PayPal [https://github.com/smartwalle/paypal](https://github.com/smartwalle/payp
 * **统一收单交易退款查询**
 
 	alipay.trade.fastpay.refund.query - **TradeFastpayRefundQuery()**
-	
+
 * **支付宝订单信息同步接口**
-	
+
 	alipay.trade.orderinfo.sync - **TradeOrderInfoSync()**
 
 * **单笔转账到支付宝账户接口**
 
 	alipay.fund.trans.toaccount.transfer - **FundTransToAccountTransfer()**
-	
+
 * **查询转账订单接口**
 
 	alipay.fund.trans.order.query - **FundTransOrderQuery()**
-	
+
 * **资金授权发码接口**
 
 	alipay.fund.auth.order.voucher.create - **FundAuthOrderVoucherCreate()**
@@ -94,9 +94,9 @@ PayPal [https://github.com/smartwalle/paypal](https://github.com/smartwalle/payp
 	alipay.fund.auth.operation.detail.query - **FundAuthOperationDetailQuery()**
 
 * **资金授权撤销接口**
-	
+
 	alipay.fund.auth.operation.cancel - **FundAuthOperationCancel()**
-	
+
 * **资金授权解冻接口**
 
 	alipay.fund.auth.order.unfreeze - **FundAuthOrderUnfreeze()**
@@ -104,21 +104,21 @@ PayPal [https://github.com/smartwalle/paypal](https://github.com/smartwalle/payp
 * **资金授权冻结接口**
 
 	alipay.fund.auth.order.freeze - **FundAuthOrderFreeze()**
-		
+
 * **线上资金授权冻结接口**
-	
+
 	alipay.fund.auth.order.app.freeze - **FundAuthOrderAppFreeze()**
-	
+
 * **查询对账单下载地址**
-	
+
 	alipay.data.dataservice.bill.downloadurl.query - **BillDownloadURLQuery()**
 
 #### 通知
-	
+
 * **通知内容转换及签名验证**
-	
+
 	将支付宝的通知内容转换为 Golang 的结构体，并且验证其合法性。
-	
+
 ## 集成流程
 
 从[支付宝开放平台](https://open.alipay.com/)申请创建相关的应用，使用自己的支付宝账号登录即可。
@@ -205,7 +205,7 @@ http.HandleFunc("/return", func(rep http.ResponseWriter, req *http.Request) {
 ```Golang
 
 var client = alipay.New(appId, aliPublicKey, privateKey, false)
- 
+
 http.HandleFunc("/alipay", func(rep http.ResponseWriter, req *http.Request) {
 	var noti, _ = client.GetTradeNotification(req)
 	if noti != nil {
